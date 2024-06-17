@@ -1,0 +1,64 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #B4BEC9;
+    color: #002333;
+    print-color-adjust: #DEEFE7;
+}
+
+footer {
+    background:#DEEFE7;
+}
+
+nav {
+    background: #159A9C;
+}
+
+.page-wrapper {
+    position: relative;
+}
+
+ul {
+    display: inline;
+    vertical-align: top;
+}
+
+
+
+
+@media (min-width: 768px) 
+
+{.menu ul li
+    {display:inline-block;
+        margin-right: 0;
+        margin-bottom: 10px; 
+        position: relative;
+}
+}
+    
+.menu {
+    position: fixed;
+    width: 100%; 
+    top: 0; 
+    z-index: 999;
+  }
+  
