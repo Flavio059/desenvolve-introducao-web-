@@ -1,0 +1,168 @@
+/* 
+Na atividade deste capítulo iremos aprimorar o layout de nossa página utilizando o Flexbox.
+
+1. Aplique o Flexbox no rodapé da seção principal, e posicione os links de forma que fiquem centralizados 
+e com espaçamento entre eles.
+ - Defina um mesmo tamanho para os links.
+ - Não se esqueça de tratar o caso de quebra de linha.
+ 2. Configure um layout de flexbox para a seção de benefícios da seguinte forma:
+  - O texto deve ficar à esquerda, e o título à direita.
+  - O título deve ficar centralizado verticalmente.
+  - O texto deve ocupar aproximadamente 70% da largura, e o título 30%.
+3. Configure um layout de flexbox para a seção de participação da seguinte forma: 
+ - Cada item deve ocupar 50% do espaço disponível.
+ - O título deverá ficar centralizado verticalmente.
+4. Inclua uma linha no topo e embaixo das seções de benefícios e participação, utilizando a propriedade 
+'border-bottom' e 'border-top' respectivamente.
+ - Remova a ocorrência de borda duplicada entre as duas seções
+*/
+
+.supporting footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.benefits {
+    display: flex;
+    border-top: #1f295c solid 1px;
+    border-bottom: #1f295c solid 1px;
+}
+
+.benefits p {
+    flex-basis: 70%;
+}
+
+.benefits h3 {
+order: 2;
+align-self: center;
+flex-basis: 30%;
+}
+
+.participation {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: #1f295c solid 1px;
+}
+
+.participation h3, .participation p {
+    flex-basis: 50%;
+}
+
+.participation h3 {
+    align-self: center;
+}
+
+/* 1. Customize a aparência dos links da seguinte forma: 
+
+- Por padrão, devem ter a cor de destaque e estarem em negrito.
+
+- Se sobrepostos, devem ter sua cor alterada para uma tonalidade mais clara/escura. Os links visitados não devem ficar mais em negrito.
+
+2. Vamos dar um destaque a primeira letra do primeiro parágrafo da seção principal. Você deverá customizá-lo para que:
+
+- Tenha tamanho de fonte 3 vezes maior que o padrão.
+
+- Seja de uma fonte diferente da escolhida para o  site.
+
+- Fique flutuando a esquerda.
+
+OBS: você precisará aplicar mais de um pseudo seletor para realizar essa estilização. Fique atento!
+
+3. Utilize bordas para criar um separador entre os itens presentes no menu de design. Aplique uma borda superior no topo de todos os itens de menu. Aplique uma borda inferior apenas no último item da lista
+
+
+
+Envie nessa atividade o link direto para a pasta do seu projeto do CSS Zen Garden no GitHub.
+
+*/
+
+a {
+    color: #ff1492;
+}
+
+a:hover {
+    color:#ff149187;
+}
+
+.main p:first-of-type::first-letter {
+    font-size: 3em;
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+
+}
+
+.design-selection li {
+    border-top: #1f295c solid 1px;
+    padding-top: 5px;
+}
+
+.design-selection li:last-of-type {
+    border-bottom: #1f295c solid 1px;
+}
+
+/* Vamos deixar a nossa página do CSS Zen Garden responsiva a dispositivos móveis! Para isso iremos implementar as seguintes modificações.
+
+1. Crie uma media query para telas inferiores a 768 pixels; nós a utilizaremos como layout mobile.
+
+2. Realize as seguintes mudanças para o layout mobile:
+
+- Remova o reposicionamento do menu de design para que ele se encaixe no mesmo lugar de antes.
+
+- Remova a borda lateral ao lado da div
+
+- Mude a orientação do Flexbox presente no elemento para vertical, e organize os elementos de forma empilhada
+
+- Remova a altura fixa presente no cabeçalho da página
+
+- Remova também o espaçamento inicial dado a cada um dos parágrafos
+
+*/
+
+@media screen and (max-width: 768px) {
+    .design-selection {
+        position: static;
+        width: 100%;
+    }
+
+    .explanation {
+        border-right: none;
+        width: 100%;
+    }
+
+    #zen-intro {
+        height: auto;
+    }
+
+    .participation {
+        flex-direction: column;
+    }
+
+    p {
+        text-indent: 0;
+    }
+}
+    
+}
+
+/* Vamos Deixar nossa página mais adequada a mídia de impressão também!
+
+1. Crie uma media query para meios impressos, mas sem qualquer tipo de restrição relacionada a tela
+
+2. Adicione as seguintes modificações a essa media query: 
+
+- Altere o estilo da fonte para uma serifada, como times .
+
+- Inverta as cores do banner para que o fundo fique claro (assim como o restante da página)
+
+*/ 
+
+@media print {
+    html {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    #zen-intro header {
+        background-color: #fbfcfd;
+        color: #1f295c;
+    }
+}
